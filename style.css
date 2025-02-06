@@ -1,0 +1,1208 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --rrelleno-azul: #3c8dde;
+  --r-verde: #44ff00;
+  --r-rojo: #ff533c;
+  --blanco: #fff;
+  --blanco-gris: #d6d6d6;
+  --negro: #000;
+  --gris: #212020;
+  --cian: #00fdff;
+  --boton: #49a9a2;
+  --cian-bg: #56eaff;
+  --mora: #f52df2;
+}
+
+html {
+  font-size: 62%;
+}
+
+section::-webkit-scrollbar {
+  width: 10px;
+}
+
+section::-webkit-scrollbar-track {
+  background: var(--negro);
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: var(--negro);
+  border-radius: 20px;
+  border: 3px solid var(--cian-bg);
+}
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: var(--negro);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+section {
+  background: var(--negro);
+  color: var(--blanco);
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 69.5px); /* Restar la altura del header */
+  padding: 2rem 9%;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto; /* Activar el desplazamiento */
+}
+
+section.active {
+  visibility: visible;
+  opacity: 1;
+  overflow-y: auto; /* Activar el desplazamiento */
+}
+
+.cian {
+  color: var(--cian);
+}
+
+.azul {
+  color: #57a8fa;
+}
+
+.verde {
+  color: var(--r-verde);
+}
+
+.rojo {
+  color: var(--r-rojo);
+}
+
+.mora {
+  color: var(--mora);
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--blanco);
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+.logo:hover {
+  color: var(--r-verde);
+}
+
+nav a {
+  font-size: 2rem;
+  color: var(--blanco);
+  font-weight: 500;
+  margin-left: 3.5rem;
+  transition: 0.5s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--cian);
+}
+
+.detalles {
+  display: flex;
+}
+
+.detalles .izquierda h3 {
+  font-size: 2rem;
+  color: var(--blanco);
+  margin-top: 2rem;
+}
+
+.detalles .info h2 {
+  font-size: 2.7rem;
+  color: var(--blanco);
+  margin-top: 5rem;
+}
+
+.detalles .info span {
+  position: relative;
+  font-size: 2.5rem;
+}
+
+.detalles .info span::before {
+  content: "Logística";
+  color: var(--cian);
+  animation: words 20s infinite;
+}
+
+.detalles .info span::after {
+  content: "";
+  background-color: var(--negro);
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid var(--cian);
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid var(--cian);
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Excel & PowerBI";
+  }
+  21%,
+  40% {
+    content: "Almacen & Transporte";
+  }
+  41%,
+  60% {
+    content: "Python & MySQL";
+  }
+  61%,
+  80% {
+    content: "Liderazgo";
+  }
+  81%,
+  100% {
+    content: "Atención al Cliente";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+
+.detalles .info p {
+  font-size: 2rem;
+  color: var(--blanco);
+  margin: 2rem 0;
+  padding-right: 11rem 9% 2rem;
+}
+
+.info-residencia h3 {
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.info-residencia p {
+  color: var(--blanco);
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  transition: 0.5s;
+}
+
+.info-residencia p:hover {
+  color: var(--cian);
+}
+
+.btn-sci {
+  display: flex;
+  align-items: center;
+}
+
+.btn-sci .sci {
+  margin-left: 2rem;
+}
+
+.btn-sci .sci a {
+  display: inline-flex;
+  padding: 0.8rem;
+  border: 0.2rem solid var(--cian);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--cian);
+  margin: 0 0.8rem;
+}
+
+.btn-sci .sci a:hover {
+  background: var(--cian);
+  color: var(--negro);
+  box-shadow: 0 0 1rem var(--cian);
+}
+
+.boton {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: var(--cian);
+  border: 0.2rem solid var(--cian);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--cian);
+  font-size: 1.6rem;
+  color: var(--negro);
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.boton:hover {
+  background: transparent;
+  color: var(--cian);
+  box-shadow: none;
+}
+
+.detalles .derecha a.online i {
+  color: var(--r-verde);
+  font-size: 9px;
+}
+
+.detalles .derecha .imagen .imagen-box {
+  margin-top: 5%;
+  position: relative;
+  width: 32vw;
+  height: 32vw;
+  border-radius: 50%;
+  padding: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.detalles .derecha .imagen .imagen-box::before,
+.detalles .derecha .imagen .imagen-box::after {
+  content: "";
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    var(--cian)
+  );
+  transform: rotate(0deg);
+  animation: borde-rotatorio 10s linear infinite;
+}
+
+.detalles .derecha .imagen .imagen-box::after {
+  animation-delay: -5s;
+}
+
+@keyframes borde-rotatorio {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.detalles .derecha .imagen .imagen-box img {
+  position: relative;
+  width: 95%;
+  height: 95%;
+  background: var(--negro);
+  border-radius: 50%;
+  border: 0.01rem solid var(--negro);
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.detalles .derecha a.online {
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--negro);
+  border: 1px solid #3c3b3b;
+  padding: 5px 15px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.badge-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin: 1rem;
+}
+
+.table{
+  margin: 3rem 0 3rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.content-table {
+  overflow-x: auto;
+  font-size: 1.7rem;
+  color: var(--blanco);
+  border: 1px solid #3c3b3b;
+  background: var(--gris);
+  border-radius: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-table thead tr {
+  color: var(--cian);
+}
+
+.table th,
+.table td {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.table::-webkit-scrollbar {
+  height: 12px;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background-color: var(--negro);
+  border-radius: 20px;
+  border: 3px solid var(--cian-bg);
+}
+
+.trabajo {
+  color: var(--blanco);
+  padding-top: 2rem;
+}
+
+.trabajo .trabajo-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+}
+
+.trabajo h2 {
+  font-size: 2.5rem;
+}
+
+.trabajo h2 i {
+  font-size: 2rem;
+  color: #57a8fa;
+}
+
+.trabajo p {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+}
+
+.trabajo-contenedor .t-izq {
+  margin: 0 0 2.5rem;
+}
+
+.boton-experiencia {
+  margin-top: 2rem;
+  width: 80%;
+  height: 30%;
+  background: var(--gris);
+  border: 0.3rem solid var(--negro);
+  font-size: 1.6rem;
+  color: var(--blanco-gris);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+}
+
+.boton-experiencia:hover {
+  border-color: var(--blanco);
+  cursor: pointer;
+}
+
+.boton-experiencia.active {
+  border-color: var(--blanco);
+  color: var(--blanco);
+  background: var(--rrelleno-azul);
+}
+
+.detalles-empleo {
+  display: none;
+}
+
+.t-der .experience.active {
+  display: block;
+}
+
+.t-der .detalles-empleo img {
+  margin: auto;
+  margin-top: 5rem;
+  width: 24rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.oficial-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.curso-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.learn-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.oficial-contenedor .oficial-box {
+  padding: 3rem 2.5rem;
+  background: var(--gris);
+  border: 0.2rem solid var(--gris);
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+
+.curso-contenedor .curso-box {
+  padding: 3rem 2.5rem;
+  background: var(--gris);
+  border: 0.2rem solid var(--gris);
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+
+.learn-contenedor .learn-box {
+  padding: 3rem 2.5rem;
+  background: var(--gris);
+  border: 0.2rem solid var(--gris);
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+
+.oficial-contenedor .oficial-box:hover {
+  border-color: var(--r-verde);
+  transform: scale(1.02);
+}
+
+.curso-contenedor .curso-box:hover {
+  border-color: var(--r-rojo);
+  transform: scale(1.02);
+}
+
+.learn-contenedor .learn-box:hover {
+  border-color: var(--mora);
+  transform: scale(1.02);
+}
+
+.oficial-box .icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.curso-box .icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.learn-box .icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.oficial-box .icon i {
+  font-size: 3.5rem;
+  transition: 0.5s;
+}
+
+.curso-box .icon i {
+  font-size: 3.5rem;
+  transition: 0.5s;
+}
+
+.learn-box .icon i {
+  font-size: 3.5rem;
+  transition: 0.5s;
+}
+
+.oficial-box:hover .icon :not(label) {
+  color: var(--r-verde);
+}
+
+.curso-box:hover .icon :not(label) {
+  color: var(--r-rojo);
+}
+
+.learn-box:hover .icon :not(label) {
+  color: var(--mora);
+}
+
+.oficial-box h3 {
+  font-size: 3rem;
+  margin: 0.5rem 0 1.5rem;
+  transition: 0.5s;
+}
+
+.curso-box h3 {
+  font-size: 3rem;
+  margin: 0.5rem 0 1.5rem;
+  transition: 0.5s;
+}
+
+.learn-box h3 a {
+  font-size: 3.5rem;
+  transition: 0.5s;
+  color: var(--blanco);
+}
+
+.learn-box h3 {
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.oficial-box:hover h3 {
+  color: var(--r-verde);
+}
+
+.curso-box:hover h3 {
+  color: var(--r-rojo);
+}
+
+.learn-box:hover h3 a {
+  color: var(--mora);
+}
+
+.oficial-box p {
+  font-size: 1.5rem;
+}
+
+.curso-box p {
+  font-size: 1.5rem;
+}
+
+.learn-box p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.oficial-box h4 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.curso-box h4 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.oficial-box .logo-edu {
+  padding-top: 3rem;
+}
+
+.curso-box .logo-edu {
+  padding-top: 3rem;
+}
+
+.oficial-box .logo-edu img {
+  width: 5rem; /* Ajusta el tamaño según necesites */
+  height: 5rem;
+  border-radius: 50%; /* Hace la imagen circular */
+  background-color: var(--blanco); /* Fondo verde en caso de transparencia */
+  object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+  display: flex;
+  padding: 0.3rem; /* Agrega espacio entre la imagen y el borde del círculo */
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+  margin: 0 auto;
+}
+
+.curso-box .logo-edu img {
+  width: 5rem; /* Ajusta el tamaño según necesites */
+  height: 5rem;
+  border-radius: 50%; /* Hace la imagen circular */
+  background-color: var(--blanco); /* Fondo verde en caso de transparencia */
+  object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+  display: flex;
+  padding: 0.3rem; /* Agrega espacio entre la imagen y el borde del círculo */
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+  margin: 0 auto;
+}
+
+.learn-box .logo-edu img {
+  width: 5rem; /* Ajusta el tamaño según necesites */
+  height: 5rem;
+  border-radius: 50%; /* Hace la imagen circular */
+  background-color: var(--blanco); /* Fondo verde en caso de transparencia */
+  object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+  display: flex;
+  padding: 0.3rem; /* Agrega espacio entre la imagen y el borde del círculo */
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+  margin: 3.5rem auto 0;
+}
+
+/* boton modal */
+/* .boton-modal{
+  padding: 2rem;
+  background-color: var(--gris);
+} */
+
+.boton-modallic label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modallic label:hover {
+  background-color: var(--r-verde);
+}
+
+.boton-modaltec label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modaltec label:hover {
+  background-color: var(--r-verde);
+}
+
+.boton-modalbach label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalbach label:hover {
+  background-color: var(--r-verde);
+}
+
+.boton-modal365 label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modal365 label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalmlbi label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalmlbi label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalpy label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalpy label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalmspj label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalmspj label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalcarga label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalcarga label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalcisco label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalcisco label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalele label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalele label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modaladu label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modaladu label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modallocu label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modallocu label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modaldem label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modaldem label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalex label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalex label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalmin label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalmin label:hover {
+  background-color: var(--r-rojo);
+}
+
+.boton-modalrel label {
+  padding: 5px 10px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.boton-modalrel label:hover {
+  background-color: var(--r-rojo);
+}
+
+/* fin boton modal */
+
+/* ventana modal */
+
+#btn-modallic {
+  display: none;
+}
+
+#btn-modaltec {
+  display: none;
+}
+
+#btn-modalbach {
+  display: none;
+}
+
+#btn-modal365 {
+  display: none;
+}
+
+#btn-modalmlbi {
+  display: none;
+}
+
+#btn-modalpy {
+  display: none;
+}
+
+#btn-modalmspj {
+  display: none;
+}
+
+#btn-modalcarga {
+  display: none;
+}
+
+#btn-modalcisco {
+  display: none;
+}
+
+#btn-modalele {
+  display: none;
+}
+
+#btn-modaladu {
+  display: none;
+}
+
+#btn-modallocu {
+  display: none;
+}
+
+#btn-modaldem {
+  display: none;
+}
+
+#btn-modalex {
+  display: none;
+}
+
+#btn-modalmin {
+  display: none;
+}
+
+#btn-modalrel {
+  display: none;
+}
+
+/* otro */
+
+.container-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(144, 148, 150, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#btn-modallic:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modaltec:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalbach:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modal365:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalmlbi:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalpy:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalmspj:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalcarga:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalcisco:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalele:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modaladu:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modallocu:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modaldem:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalex:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalmin:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+#btn-modalrel:checked ~ .container-modal {
+  display: flex;
+  position: absolute;
+}
+
+.content-modal {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.content-modal .btn-cerrar {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  color: var(--negro);
+}
+
+.content-modal .btn-cerrar label {
+  padding: 10px 70px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 2rem;
+}
+
+.content-modal .certificado img {
+  width: 100%; /* Ajusta el tamaño según necesites */
+  height: 100%;
+  border-radius: 5px; /* Hace la imagen circular */
+  background-color: var(--blanco); /* Fondo verde en caso de transparencia */
+  display: flex;
+  padding: 0.8rem; /* Agrega espacio entre la imagen y el borde del círculo */
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+  justify-content: center;
+}
+
+.content-modal .certificado h2 {
+  font-size: 3rem;
+  color: var(--gris);
+  background: var(--blanco-gris);
+  padding: 10rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.content-modal .btn-cerrar label:hover {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+.cerrar-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width) {
+  .content-modal {
+    width: 90%;
+  }
+}
+
+/* fin ventana modal */
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+}
+
+.contact-container .contact-box:first-child {
+  align-self: center;
+}
+
+.contact-box h2 {
+  font-size: 4.5rem;
+}
+
+.contact-box p {
+  font-size: 1.6rem;
+}
+
+.contact-box .desc {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.contact-detail i {
+  display: inline-flex;
+  background: var(--gris);
+  color: var(--cian);
+  font-size: 3rem;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  margin-right: 1.5rem;
+}
+
+.contact-detail .detail p:first-child {
+  color: var(--cian);
+}
+
+.contact-box form {
+  background: var(--gris);
+  padding: 2.5rem 3.5rem 3.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.contact-box .heading {
+  font-size: 3.5rem;
+}
+
+.contact-box .field-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.contact-box .field-box input,
+.contact-box .field-box textarea {
+  padding: 1.5rem;
+  background: var(--negro);
+  border: 0.15rem solid var(--negro);
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  color: var(--cian);
+}
+
+.contact-box .field-box textarea {
+  grid-column: 1 / -1;
+  height: 26rem;
+  resize: none;
+}
+
+.contact-box .field-box input:focus,
+.contact-box .field-box textarea:focus {
+  border-color: var(--cian);
+}
+
+.contact-box .boton {
+  margin-top: 2rem;
+  cursor: pointer;
+}
