@@ -166,15 +166,15 @@ nav a.active {
   }
   21%,
   40% {
-    content: "Almacen & Transporte";
+    content: "Almacen";
   }
   41%,
   60% {
-    content: "Python & MySQL";
+    content: "Python";
   }
   61%,
   80% {
-    content: "Liderazgo";
+    content: "Transporte";
   }
   81%,
   100% {
